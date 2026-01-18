@@ -88,10 +88,6 @@ The API is fully documented using Swagger/OpenAPI. Once the application is runni
 | GET | `/api/songs` | List all songs | ❌ |
 | POST | `/api/songs` | Add a new song | ✅ |
 
----
-
-## 🧪 Running Tests
-
 To run the test suite:
 ```bash
 docker exec music-store-app php artisan test
