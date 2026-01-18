@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('duration')->nullable();
-            $table->foreignId('album_id')->onDelete('cascade');
+            $table->foreignId('album_id')->nullable()->constrained()->onDelete('cascade');  
             $table->timestamps();
         });
     }

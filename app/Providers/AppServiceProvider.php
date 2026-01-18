@@ -3,7 +3,17 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use OpenApi\Attributes as OA;
 
+use Laravel\Passport\Passport;
+
+#[OA\SecurityScheme(
+    securityScheme: 'bearerAuth',
+    type: 'http',
+    scheme: 'bearer',
+    bearerFormat: 'JWT',
+    description: 'Bearer token authentication',
+)]
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Passport::$validateKeyPermissions = false;
     }
 }
